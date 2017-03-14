@@ -4,8 +4,8 @@
     <description>
         Vote for your favorite photo
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="jamesmholst@yahoo.com" href="http://phonegap.com">
+        james
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
