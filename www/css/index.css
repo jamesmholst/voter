@@ -31,6 +31,20 @@ body {
     text-transform:uppercase;
     width:100%;
     background-color:#3e4247;
+    color: #FFFFFF;
+}
+
+.number {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.small-photo {
+  margin-top: 20px;
+}
+
+.big {
+  font-size: 3em;
 }
 
 /* Portrait layout (default) */

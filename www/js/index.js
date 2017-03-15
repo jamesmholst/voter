@@ -34,22 +34,46 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        init();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        //var listeningElement = parentElement.querySelector('.listening');
+        //var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        //listeningElement.setAttribute('style', 'display:none;');
+        //receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
     }
 };
 
-if (!localStorage.getItem("1pic")) {
-  localStorage.setItem('1pic', 0);
+
+function init(){
+  for (i = 1; i < 11; i++) {
+    var dataItem = "pic" + i.toString();
+    if (!localStorage.getItem(dataItem)) {
+      localStorage.setItem(dataItem, 0);
+    }
+    var tally = dataItem + "Tally";
+
+    document.getElementById(tally).innerHTML = localStorage.getItem(dataItem);
+  }
+}
+
+
+function upvote(num){
+
+  var dataItem = "pic" + num.toString();
+
+  var value = localStorage.getItem(dataItem);
+  value ++;
+  localStorage.setItem(dataItem, value);
+  var tally = dataItem + "Tally";
+  console.log(tally);
+  document.getElementById(tally).innerHTML = value;
+
 }
 
 
@@ -58,5 +82,5 @@ function showOne(){
   value ++;
   localStorage.setItem('1pic', value);
   document.getElementById("1picTally").innerHTML = value;
-  
+
 }
